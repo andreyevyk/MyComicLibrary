@@ -1,0 +1,53 @@
+<form #create="ngForm" (ngSubmit)="createComic(create)">
+    <div class="row">
+      <div class="col-md-5">
+        <img [src]="comic.imageCover" alt="" width="450">
+      </div>
+      <div class="col-md-7 mt-2 editForm">
+        <div class="row mb-2">
+          <h6>List</h6>
+          <select class="custom-select" name="list" id="list" ngModel>
+            <option disabled selected value="">Select your list</option>
+            <option *ngFor="let key of keys" [value]="key" [label]="type[key]"></option>
+          </select>
+        </div>
+        <div class="row">
+          <div class="col-md-6 my-input">
+            <h6>Title</h6>
+            <input readonly type="text" name="title" id="title" [value]="comic.title" class="form-control">
+          </div>
+          <div class="col-md-6" my-input>
+            <h6>Page Count</h6>
+            <input readonly type="text" name="pageCount" [value]="comic.pageCount" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 my-input">
+            <h6>Characters</h6>
+            <ul class="list-group">
+              <li *ngFor="let character of comic.characters; let i = index" class="list-group-item">
+                {{character.name}}
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h6>Creators</h6>
+            <ul class="list-group my-input">
+              <li *ngFor="let creator of comic.creators; let i = index" class="list-group-item">
+                {{creator.name}}
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <h6>Description</h6>
+          <textarea readonly rows="6" name="description" class="form-control">{{comic.description}}</textarea>
+        </div>
+        <div class="buttons mt-4">
+          <button (click)="backClicked()" type="button" class="btn mr-2 btn-lg btn-secondary">Back</button>
+          <button type="submit" class="btn mr-2 btn-lg btn-success">Create</button>
+        </div>
+      </div>
+    </div>
+
+  </form>

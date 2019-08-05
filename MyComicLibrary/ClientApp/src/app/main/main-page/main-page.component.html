@@ -1,0 +1,28 @@
+<h1 class=title>{{title}}</h1>
+<a href="comic/add" class="btn btn-danger addComic">Add Comic</a>
+<p *ngIf="!comics.length" class="text-center text-muted">
+  Add a Comic
+</p>
+<ol class="list-unstyled">
+  <li *ngFor="let cols of rows " class="row">
+    <div *ngFor="let image of cols" class="col-md-3">
+        <a href="comic/{{image.id}}">
+            <div class="card">
+              <img class="card-img-top" [src]="image.imageCover" alt="image.title">
+              <div class="card-body">
+                <h5 class="card-title">{{image.title}}</h5>
+                <p class="card-text">{{image.description}}.</p>
+              </div>
+            </div>
+        </a>
+    </div>
+  </li>
+</ol>
+
+<ngb-pagination *ngIf="count>4"
+  [(page)]="p"
+  [pageSize]="4"
+  [maxSize]="4"
+  [collectionSize]="count"
+  (pageChange)="pageChanger($event)"
+></ngb-pagination>

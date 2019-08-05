@@ -1,0 +1,37 @@
+<form #f="ngForm" (ngSubmit)="searchComic(f)" ngNativeValidate>
+  <div class="row text-center form">
+      <input required class="form-control col-md-11" id="title" name="title" placeholder="Search a Comic" type="text" ngModel>
+      <button class="btn btn-danger col-md-1" type="submit">Search</button>
+  </div>
+</form>
+
+<ngb-pagination *ngIf="ativo"
+  [(page)]="p"
+  [pageSize]="4"
+  [maxSize]="3"
+  [collectionSize]="count"
+  (pageChange)="pageChanger($event)"
+></ngb-pagination>
+
+<ol class="list-unstyled" *ngIf="ativo">
+  <li *ngFor="let cols of rows " class="row comics">
+    <div *ngFor="let image of cols; let i = index" class="col-md-3">
+        <a href="comic/add/{{image.idComicAPI}}">
+            <div class="card">
+              <img class="card-img-top" [src]="image.imageCover" alt="image.title">
+              <div class="card-body">
+                <h5 class="card-title">{{image.title}}</h5>
+                <p class="card-text">{{image.description}}.</p>
+              </div>
+            </div>
+        </a>
+    </div>
+  </li>
+</ol>
+
+
+<div *ngIf="error" class="error alert alert-danger" role="alert">
+  Don't have a comic with that name.
+  Try entering another name.
+</div>
+

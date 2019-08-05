@@ -1,0 +1,35 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 300px;
+}
+
+mat-sidenav,mat-toolbar {
+  background: #E71C23;
+}
+.mat-list .mat-list-item, .mat-nav-list .mat-list-item, .mat-selection-list .mat-list-item {
+  color: white;
+}
+
+.mat-nav-list{
+  margin-top: 20%;
+}
+mat-nav-list > a{
+  font-size: 2em;
+  font-family: Marvel, Arial, sans-serif;
+  border-bottom: 1.5px solid rgb(221, 221, 221);
+}
+.main{
+  height:90%;
+  margin: 2% 5%;
+}
+.btn-add{
+  position: absolute;
+  left: 4%;
+  bottom: 2%;
+}
+a.mat-list-item:hover{
+  background: rgb(207, 33, 33);
+}

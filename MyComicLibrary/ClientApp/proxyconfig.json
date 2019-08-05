@@ -1,0 +1,12 @@
+{
+  "/api/comic": {
+      "target": "http://localhost:5001",
+      "secure": false,
+      "changeOrigin": false
+  },
+  "/api/listcomic": {
+    "target": "http://localhost:5001",
+    "secure": false,
+    "changeOrigin": false
+}
+}

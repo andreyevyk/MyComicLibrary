@@ -1,0 +1,39 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
+    <mat-toolbar class="mt-5">
+      <a href="main/0">
+        <img src="assets/img/LogoMCL2.png" alt="MyComicLibrary" width="250">
+      </a>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="main/0">To Read</a>
+      <a mat-list-item href="main/1">Reading</a>
+      <a mat-list-item href="main/2">Read</a>
+      <a mat-list-item href="main/3">Lend</a>
+    </mat-nav-list>
+    <div>
+      <a href="comic/add" class="btn btn-outline-light btn-add">Add a comic</a>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <div class="main">
+        <router-outlet></router-outlet>
+      </div>
+
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

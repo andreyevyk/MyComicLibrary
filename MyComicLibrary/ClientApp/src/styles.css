@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@font-face {
+  font-family: Marvel;
+  src: url('assets/fonts/Bangers.ttf');
+}
+html,body{
+  height: 100%;
+}
+app-root {
+  font-family: Marvel, Arial, sans-serif;
+  margin: 0;
+}

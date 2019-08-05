@@ -1,0 +1,33 @@
+.form{
+  width: 80%;
+  position: absolute;
+  left: 11%;
+}
+a:link, a > .card{
+  text-decoration: none;
+  color: black;
+}
+ngb-pagination{
+  position: absolute;
+  top:70px;
+  right: 41%;
+}
+.comics{
+  padding-top:8%;
+}
+/deep/ .page-item.active .page-link {
+  background-color: #C82333;
+  border-color:  #C82333;
+}
+/deep/ .page-link {
+  color:  #C82333;
+}
+/deep/ .page-link:hover{
+  color: #C82333;
+}
+.error{
+  position: absolute;
+  right: 2%;
+  top: 10%;
+  width: 300px;
+}

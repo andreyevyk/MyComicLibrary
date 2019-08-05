@@ -1,0 +1,15 @@
+.list-group-item{
+  padding: 5px 5px 5px 12px;
+  background-color: #e9ecef;
+}
+.list-group-item input{
+  border: none;
+  padding: 0;
+  height: 24px;
+}
+.my-input{
+  padding-left: 0;
+}
+.editForm{
+  padding-left: 30px;
+}
